@@ -1,0 +1,28 @@
+{
+  "name": "materials-library-service",
+  "version": "1.0.0",
+  "description": "A backend application that manages client material libraries.",
+  "main": "app.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "jasmine JASMINE_CONFIG_PATH=spec/support/jasmine.json",
+    "client": "cd .. && cd client && npm start",
+    "server": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jasmine-node": "^3.0.0",
+    "log4js": "^6.3.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "underscore.string": "^3.3.5"
+  },
+  "devDependencies": {
+    "jasmine": "^3.6.4"
+  }
+}
