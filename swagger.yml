@@ -1,0 +1,109 @@
+openapi: 3.0.3
+
+info:
+  title: Materials Library
+  description: Exposes methods to interface with the Materials library database.
+  version: 0.0.1
+
+servers:
+  - url: localhost:3000
+    description: local development server
+
+paths:
+  /materials/all:
+    get:
+      summary: Returns a list of users.
+      responses:
+        '200':    # status code
+          description: A JSON array of materials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfMaterial'
+        '403':
+          description: Authorization error.
+  /materials/:
+    post:
+      summary: An upsert operation, with material name as primary key.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                material:
+                  $ref: '#/components/schemas/Material'
+      responses:
+        '200':    # status code
+          description: A JSON array of materials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpsertResponse'
+        '403':
+          description: Authorization error.
+        '500':
+          description: Internal server error, which will include any errors.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpsertResponse'
+    delete:
+      summary: An upsert operation, with material name as primary key.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                name:
+                  type: string
+      responses:
+        '200':    # status code
+          description: A JSON array of materials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpsertResponse'
+        '403':
+          description: Authorization error.
+        '500':
+          description: Internal server error, which will include any errors.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteResponse'
+
+components:
+  schemas:
+    DeleteResponse:
+      type: object
+      properties:
+        error: 
+          type: string
+    UpsertResponse:
+      type: object
+      properties:
+        update: 
+          type: boolean
+        result:
+          $ref: '#/components/schemas/Material'
+        error:
+          type: string
+    ArrayOfMaterial:
+      type: array
+      items:
+        $ref: '#/components/schemas/Material'
+    Material:
+      type: object
+      properties:
+        name:
+          type: string
+        volume:
+          type: number
+        color:
+          type: string
+        cost:
+          type: number
+        deliveryDate:
+          type: string
