@@ -1,0 +1,104 @@
+.dashboard {
+  padding: 30px;
+  position: fixed;
+  width:70vw;
+  height: 80vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.innerDashboard  {
+  overflow:hidden;
+  display: flex;
+  flex-direction: row;
+  height:100%;
+}
+
+.materialsPaneOuter {
+  height: 100%;
+  background-color:#1D1D21;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.innerDashboardSpacer {
+  display: flex;
+  width: 5%;
+}
+
+.libraryMenuOuter {
+  display: flex;
+  width: 40%;
+  background-color: #17171A;
+  height:100%;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-color: #565664;
+  border-style: solid;
+  border-width: 1px;
+}
+
+input {
+  background-color: #565664;
+  color: white;
+  border-style: none;
+  padding: 4px;
+}
+
+.card {
+  background-color: #17171A;
+  color:white;
+  height: 20%;
+  padding:20px;
+  display: flex;
+  flex-direction: row;
+  border-color: #565664;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.activeCard {
+  background-color: #000344;
+}
+
+.cardText {
+  padding-left: 16px;
+  flex-direction: column;
+  display: flex;
+}
+
+.label {
+  height: 25px;
+}
+
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+}
+
+.col {
+  padding-left: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightCol {
+  padding-left: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.materialColItem {
+  display: flex;
+  flex-direction: column;
+}

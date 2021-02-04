@@ -1,0 +1,40 @@
+.addDeleteOuter {
+  height: 10%;
+  flex-direction: row;
+  display: flex;
+  padding-bottom: 5px;
+}
+
+.button {
+  height: 80%;
+  width: 15%;
+  border-radius: 30px;
+  font-size : 20px;
+  padding: 5px;
+}
+
+.addButton {
+  background-color: #0075DB;
+  border: none;
+  color: white;
+}
+
+.deleteButton {
+  background-color: #737373;
+  border: none;
+  color: white;
+}
+
+.deleteButton {
+  border: none;
+  color: white;
+  background-color: #FF444C;
+}
+
+.disabled {
+  background-color: #737373;
+}
+
+.spacer {
+  width: 5%;
+}
