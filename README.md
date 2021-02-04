@@ -1,4 +1,4 @@
-# Project Title
+# Materials Library
 
 A client and server pairing for a Cesium take-home project. A Node.js backend and React front end were created to deliver an implementation of the following specification: https://www.sketch.com/s/a9a17aad-9171-4b63-a0aa-3b723159f27a.
 
